@@ -42,7 +42,9 @@
 
     <br><br><br>
 
-    <h1>Home page!</h1>
+    <div class="p-2 pt-md-5 pb-md-3 mx-auto ">
+        <h1 class="display-4">Home page!</h1>
+    </div>
 
     <br>
 
@@ -72,6 +74,40 @@
             {{/each}}
         </tbody>
     </table>
+
+    <div class="container">
+
+        <table class="table table-hover ">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Picture</th>
+                <th scope="col">&nbsp;</th>
+                <th scope="col">&nbsp;</th>
+                <th scope="col">&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+
+                {{#each products}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{price}}</td>
+                <td><img class="mx-auto" src="{{picture}}" width="150" height="100" /></td>
+
+                <td>
+
+                        <a type="button" class="btn btn-danger btn-sm"
+                        href="/delete/{{_id}}"
+                        >Delete</a>
+                </td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+
+    </div>
 
 
 </body>

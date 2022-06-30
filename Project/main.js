@@ -1,6 +1,6 @@
 var express = require('express')
 var session = require('express-session')
-
+const ObjectId = require('mongodb').ObjectId
 
 //Mongo
 var MongoClient = require('mongodb').MongoClient
@@ -72,7 +72,16 @@ app.get('/insert',(req,res)=>{
     res.render("newProduct")
 })
 
+app.get('/delete/:_id', async (req, res) => {
+    //transform your param into an ObjectId
+    var id = req.params._id;
+    var id2 = new ObjectId(id);
 
+    let server = await MongoClient.connect(url) 
+    let dbo = server.db("ATNToys")
+    await dbo.collection('product').deleteOne({'_id': id2})
+    res.redirect('/')
+})
 
 
 
