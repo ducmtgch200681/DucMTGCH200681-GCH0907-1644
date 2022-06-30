@@ -7,15 +7,18 @@
     <title>login page</title>
 </head>
 <body>
-    <h1>Say Hi!</h1>
-    <h1>Ban da truy cap trang {{accessCount}} lan trong phien lam viec!</h1>
+    <h1>Hi!</h1>
+    <h1>Welcome to ANT</h1>
+    
     {{#if Notauthen}}
         <form action="/account" method="post">
             Tell me your name : <input type="text" name="txtName">
             <br>
+            <br>
             Password: <input type="password" name="txtPass">
-            
-            <input type="submit" value="Ok, I agreed!">
+            <br>
+            <br>
+            <input type="submit" value="Ok, Sign me in!">
         </form>
     {{/if}}
 

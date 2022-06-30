@@ -51,7 +51,7 @@ app.post('/newProduct', async (req,res)=>{
     let price = req.body.txtPrice
     let picture = req.body.txtPicture
     if(name.length <= 5){
-        res.render('newProduct', {'nameError':'Ten hong nho hon 5 i tu'})
+        res.render('newProduct', {'nameError':'Name must have atlease 5 letters'})
         return
     }
 
@@ -116,7 +116,7 @@ app.post('/account',async (req,res)=>{
     if(result.length >0){
         res.redirect('/profile')
     }else{
-        res.write('khong hop le')
+        res.write('Denied')
         res.end()
     }    
 })

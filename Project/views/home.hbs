@@ -17,24 +17,25 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="background-color: #718096">
         <div class="container">
             <div class="navbar-header"> 
-                <div class="navbar-brand">ANTToys admin</div>
-                <a class="navbar-brand" href="/">Home</a>
+                <h1 class="navbar-brand">ANTToys admin</h1>
+                
             </div>
-            <div>
-                <ul class="navbar-nav mr-auto">
-                    <li>
+            <div class="navbar-nav mr-auto">
+                        <a class="navbar-brand" href="/">Home</a>   
+            </div>
+            
+            <div class="navbar-nav mr-auto">
                         <a class="text-white" href="/insert">Create a new Product!</a>                 
-                    </li>
-                </ul>
             </div>
-            <div>
-                <ul class="navbar-nav mr-auto">
-                    <li>
+
+            <div class="navbar-nav mr-auto">
                         <a class="text-white" href="/profile">Profile</a>
-                        <a class="text-white" href="/login">login</a>
-                    </li>
-                </ul>
             </div>
+
+            <div class="navbar-nav mr-auto">            
+                        <a class="text-white" href="/logout">Logout</a>
+            </div>
+
 
         </div>
     </nav>
@@ -42,40 +43,24 @@
 
     <br><br><br>
 
-    <div class="p-2 pt-md-5 pb-md-3 mx-auto ">
-        <h1 class="display-4">Home page!</h1>
-    </div>
-
-    <br>
-
     
-    <form action="/search" method="post">
-        Name <input type="text" name="txtName">
-        <input type="submit" value="Search Product">
-    </form>
-
-    <br>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Picture</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each products}}
-            <tr>
-                <td>{{@index}}-{{name}}</td>
-                <td>{{price}}</td>
-                <td><img class="mx-auto" src="{{picture}}" width="150" height="100" /></td>
-            </tr>
-            {{/each}}
-        </tbody>
-    </table>
-
     <div class="container">
+
+        <div class="p-2 pt-md-5 pb-md-3 mx-auto ">
+                <h1 class="display-4">Home page!</h1>
+            </div>
+
+            <br>
+
+            
+            <form action="/search" method="post">
+                Name <input type="text" name="txtName">
+                <input type="submit" value="Search Product">
+            </form>
+            <br>
+            <br>
+
+
 
         <table class="table table-hover ">
             <thead class="thead-dark">
@@ -84,9 +69,8 @@
                 <th scope="col">Price</th>
                 <th scope="col">Picture</th>
                 <th scope="col">&nbsp;</th>
-                <th scope="col">&nbsp;</th>
-                <th scope="col">&nbsp;</th>
             </tr>
+
             </thead>
             <tbody>
 
